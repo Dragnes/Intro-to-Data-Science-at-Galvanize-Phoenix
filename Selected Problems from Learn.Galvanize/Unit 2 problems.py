@@ -94,3 +94,154 @@ while i < 10:
     else:
         print(i)
     i += 1
+
+#Write a script that takes two user inputted numbers and prints "The first number is larger" or "The second number is larger" depending on which is larger.
+#If the numbers are equal, print "The two numbers are equal". (Hint: you'll need to use input() twice.)
+first_number = int(input('Please enter a number: '))
+second_number = int(input('Please enter another number: '))
+if first_number > second_number:
+    print('The first number is larger.')
+elif first_number < second_number:
+    print('The second number is larger.')
+else:
+    print('The two numbers are equal.')
+
+#Write a script that computes the factorial of a user inputted positive number and prints the result. 
+#Things to think about:
+#What is the process of computing a factorial if you were to compute it by hand?
+#What is the common starting place when trying to compute the factorial of any number?
+#What should your code do if the user inputs a number that isn't positive?
+number = int(input('Please enter a number: '))
+total = 1
+while number > 0:
+    total *= number
+    number -= 1
+print(total)
+
+number = int(input('Please enter a number: '))
+result = 1
+count = 1
+while count <= number:
+    result *= count
+    count += 1
+print(result)
+
+#Write a script that computes and prints all of the positive divisors of a user inputted positive number from lowest to highest.
+#Things to think about:
+#How do you determine if a single number is a divisor of another?
+#How do you do this multiple times? (Hint: it involves a while loop.)
+#When do you stop the loop?
+number = int(input('Please enter a number: '))
+for i in range(1, number + 1):
+    if number % i == 0:
+        print(i)
+
+number = int(input('Please enter a number: '))
+check = 1
+while check <= number:
+    if number % check == 0:
+        print(check)
+    check += 1
+
+number = int(input('Please enter a number: '))
+check = 1
+while check <= number / 2:
+    if number % check == 0:
+        print(check)
+    check += 1
+print(number)
+
+#Write a script that computes the greatest common divisor between two user inputted positive numbers and prints the result.
+#Things to think about:
+#How do you get two numbers from the user?
+#Where should you start your search for the GCD?
+#Where/how should you end your search?
+first = int(input('Please enter a number: '))
+second = int(input('Please enter a number: '))
+if first > second:
+    selected = first
+else:
+    selected = second
+for i in range(1, selected):
+    if (first % i == 0) and (second % i == 0):
+        divisor = i
+print(divisor)
+
+number = int(input('Please enter a number: '))
+number2 = int(input('Please enter another number: '))
+while number != number2:
+    if number > number2:
+        number -= number2
+    else:
+        number2 -= number
+print(number)
+
+number = int(input('Please enter a number: '))
+number2 = int(input('Please enter another number: '))
+while number2 != 0:
+    temp = number2
+    number2 = number % number2
+    number = temp    
+print(number)
+
+while number2 != 0:
+    number, number2 = number2, number % number2
+print(number)
+
+#Write a script that computes the least common multiple between two user inputted positive numbers and prints the result.
+#Things to think about:
+#How do you get two numbers from the user?
+#Where should you start your search for the LCM?
+#Where/how should you end your search?
+number1  = int(input('Please enter a number: '))
+number2 = int(input('Please enter another number: '))
+if number1 > number2:
+    greater = number1
+else:
+    greater = number2
+while(True):
+    if((greater % number1 == 0) and (greater % number2 == 0)):
+        lcm = greater
+        break
+    greater += 1
+print(lcm)
+
+number = int(input('Please enter a number: '))
+number2 = int(input('Please enter another number: '))
+a, b = number, number2
+while number != number2:
+    if number > number2:
+        number -= number2
+    else:
+        number2 -= number
+result = (a / number) * b
+print(result)
+
+#Write a script that determines whether or not a user inputted number is a prime number and prints
+#"The number you inputted is a prime number" or "The number you inputted is not a prime number" depending on what your script finds. 
+#Things to think about:
+#How do you check if a number is divisible by another number?
+#What numbers are a prime number divisible by?
+#How do you check all of the numbers a number could be divisible by (Hint: use a loop)?
+#When do you stop the loop?
+
+num = int(input('Please enter a number: '))
+if num > 1:
+   for i in range(2,num):
+       if (num % i) == 0:
+           print("The number you inputted is not a prime number.")
+           break
+   else:
+       print("The number you inputted is a prime number.")
+       
+number = int(input('Please enter a number: '))
+check = 2
+is_prime = True
+while check <= number / 2:
+    if number % check == 0:
+        print('The number you inputted is not a prime number.')
+        is_prime = False
+        break
+    check += 1
+if is_prime:
+    print('The number you inputted is a prime number.')
