@@ -245,3 +245,26 @@ while check <= number / 2:
     check += 1
 if is_prime:
     print('The number you inputted is a prime number.')
+
+# Write a script that prints the Nth element in this series as determined by input from the user.
+# For example, if the user inputs the number 0, your script should print the value of a0, which is 1.
+# If the user inputs the number 3, your script should print the value of a3, which is 15.
+# ai = 2*(ai-1)+1 Find the value of ith term
+
+'''Recursion method'''
+number = int(input('Please enter a value for N: '))
+def series(number):
+    if number==0:
+        return(1)
+    else:
+        return(2*series(number-1)+1)
+print(series(number))
+
+'''While loop method'''
+number = int(input('Please enter a value for N: '))
+a = 1
+count = 0
+while count < number:
+    a = 2 * a + 1
+    count += 1
+print(a)
