@@ -94,4 +94,26 @@ s = input('Please enter a string: ')
 for i in s[::2]:
     print(i.upper())
 
+# Write a program that takes a user-inputted string and prints out Hello, <input>! in response, where <input> is the inputted string.
+# For example, if the inputted string is 'world', your program should print 'Hello, world!'
 
+s = input('Please enter a string: ')
+print('Hello, ' + s + '!')
+
+# Write a program that takes a user-inputted integer and prints out Two times <input> is <result>.
+# where <input> is the inputted integer and <result> is twice that value.
+# For example, if the user provides the number 10, your program should print 'Two times 10 is 20.'
+
+n = int(input('Please enter an integer: '))
+print('Two times {0} is {1}.'.format(n, 2*n))
+
+# Write a program that takes a user-inputted integer and prints out the value of pi to the number of decimal places specified by the integer.
+# For example, if the inputted integer is '2' your program should print '3.14'.
+# Hints:
+# Python's math package includes a constant for pi (as pi). We have imported pi for you in the example code below.
+# The format string syntax for rendering a floating point value to N decimal places is {:.Nf}. The example code below prints pi to 10 decimal places.
+# You will first need to assemble a format string, and then print your result using that format string.
+
+from math import pi
+n = int(input('Please enter an integer: '))
+print("{:.{}f}".format(pi, n))
