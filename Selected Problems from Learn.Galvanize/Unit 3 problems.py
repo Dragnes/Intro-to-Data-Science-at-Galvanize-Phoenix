@@ -117,3 +117,75 @@ print('Two times {0} is {1}.'.format(n, 2*n))
 from math import pi
 n = int(input('Please enter an integer: '))
 print("{:.{}f}".format(pi, n))
+
+# Write a program that takes in:
+# s1 A comma-separated string
+# s2 A string to be counted
+# And prints the number of occurances of the second string within the first string's comma-separated members.
+# For example, if the user inputs one, two, one, three and then one, your program should print 2.
+# Hint: You'll find the method list.count() helpful here.
+
+s1 = input('Please enter a series of comma-separated strings: ')
+l = s1.split(', ')
+s2 = input('Please enter a string to count: ')
+x = l.count(s2)
+print(x)
+
+# Write a program that takes a series of user-inputted, comma-separated strings and prints a list of those strings with the first element repeated at the end.
+# For example, if the user inputs one, two, three, your program should print ['one', 'two', 'three', 'one']. 
+
+s = input('Please enter a series of comma-separated strings: ')
+l = s.split(', ')
+l.append(l[0])
+print(l)
+
+# Write a program that takes a series of user-inputted, comma-separated strings, creates a list from it, and turns that list into a word-unit palindrome 
+# i.e., a list with the same words forward and backward.
+# For example, if the user inputs one, two, three, your program should print ['one', 'two', 'three', 'three', 'two', 'one']
+
+s = input('Please enter a series of comma-separated strings: ')
+l = s.split(', ')
+l2 = list(l)
+l2.reverse()
+for i in l2:
+    l.append(i)
+print(l)
+
+# Write a program that takes a series of user-inputted, comma-separated strings, creates a list from it,
+# and turns that list into a word-unit palindrome  with an odd number of elements.
+# This implies that the palindrome will "hinge" on its middle element.
+# For example, if the user inputs one, two, three, your program should print ['one', 'two', 'three', 'two', 'one'] 
+# In this case, note that 'three' is present only once in the middle of the printed list
+# Input series of comma-separated strings
+
+s = input('Please enter a series of comma-separated strings: ')
+l = s.split(', ')
+l2 = list(l)
+l2.reverse()
+for i in l2:
+    l.append(i)
+del l[(len(l) // 2)]
+print(l)
+
+# Write a program that takes a series of user-inputted, comma-separated strings, and prints out a list of the odd-indexed elements
+# Assuming that the first element is at index 0
+# For example, if the user inputs a, b, c, d, your program should print ['b', 'd'].
+
+s = input('Please enter a series of comma-separated strings: ')
+l = s.split(', ')
+del l[0::2]
+print(l)
+
+
+# Write a program that takes a series of user-inputted, comma-separated strings, creates a list from it, sorts the list.
+# Then prints the sorted list with each element numbered, starting from 1.
+# For example, if the user inputs banana, apple, cherry, your program should print the following:
+# 1 apple
+# 2 banana
+# 3 cherry
+
+s = input('Please enter a series of comma-separated strings: ')
+l = s.split(', ')
+l.sort()
+for idx, i in enumerate(l, start=1):
+    print(idx, i)
